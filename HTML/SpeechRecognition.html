@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>test_speech</title>
+  </head>
+  <body>
+    <script>
+      function test_speech_english() {
+        text = "Kenyt.AI Hi how's going ";
+        let utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = "en-IN";
+        utterance.pitch = 1;
+        utterance.rate = 1;
+        utterance.volume = 1;
+        window.speechSynthesis.speak(utterance);
+      }
+      function test_speech_telgu() {
+        text = "శుభోదయం ముంబై";
+        let utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = "te-IN";
+        utterance.pitch = 1;
+        utterance.rate = 1;
+        utterance.volume = 1;
+        voices = window.speechSynthesis.getVoices();
+        utterance.voice = voices[15];
+        window.speechSynthesis.speak(utterance);
+      }
+      function test_speech_hindi() {
+        text =
+          "स्कूल में कक्षा पहली से लेख लिखने के लिए बोला जाता है. लेख किसी भी टॉपि";
+        let utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = "hi-IN";
+        utterance.pitch = 1;
+        utterance.rate = 1;
+        utterance.volume = 1;
+        voices = window.speechSynthesis.getVoices();
+        utterance.voice = voices[15];
+        window.speechSynthesis.speak(utterance);
+      }
+    </script>
+    <input
+      id="clickMe"
+      type="button"
+      value="clickme"
+      onclick="test_speech_english();"
+    />
+    <input
+      id="clickMe"
+      type="button"
+      value="clickmeForTelgu"
+      onclick="test_speech_telgu();"
+    />
+    <input
+      id="clickMe"
+      type="button"
+      value="clickmeForHindi"
+      onclick="test_speech_hindi();"
+    />
+  </body>
+</html>
